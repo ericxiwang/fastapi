@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import os
 from app.config.config import Settings
-from app.routers.user_management import user_router
+from app.routers.user_router import user_router
 from app.database.database import get_db
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session

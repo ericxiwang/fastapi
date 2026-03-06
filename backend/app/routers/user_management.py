@@ -1,23 +1,21 @@
-from fastapi import APIRouter, HTTPException,Depends
-from app.models.user_info import USER_INFO
-from app.database.database import get_db,engine
-import sqlalchemy as db,select
-from app.schemas import schemas
-from sqlalchemy.orm import Session
 
 
-user_router = APIRouter(prefix="/users")
+class user_management:
+    def __init__(self):
+        pass
 
+    def create_user(self, user_data):
+        # Logic to create a new user
+        pass
 
-#USER_INFO.Base.metadata.create_all(bind=engine)
-@user_router.post("/")
-async def create_user(user_data):
-    # In a real implementation, you would hash the password and interact with the database
-    # Example: db = get_db(); new_user = create_user(db, user_data); return new_user
-    return {"message": "User created successfully"}
+    def get_user(self, user_email):
+        # Logic to retrieve user information
+        pass
 
+    def update_user(self, user_email, user_data):
+        # Logic to update user information
+        pass
 
-@user_router.get("/all_users", response_model=list[schemas.UserRead])
-def get_all_users(db: Session = Depends(get_db)):
-    users = db.query(USER_INFO).all()
-    return users
+    def delete_user(self, user_email):
+        # Logic to delete a user
+        pass
