@@ -9,7 +9,7 @@ class USER_INFO(Base):
     user_email = Column(String, unique=True, nullable=False)
     user_password = Column(String, nullable=False)
     user_name = Column(String, nullable=False)
-    user_group = Column(String)
-
+    user_group = Column(Integer)
+    user_description = Column(String, nullable=True)
 
 
